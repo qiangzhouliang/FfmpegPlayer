@@ -34,7 +34,7 @@ public class SwanPlayer implements SurfaceHolder.Callback {
 
     @Override
     public void surfaceChanged(@NonNull SurfaceHolder holder, int format, int width, int height) {
-        this.surfaceHolder = surfaceHolder;
+        this.surfaceHolder = holder;
     }
 
     @Override
