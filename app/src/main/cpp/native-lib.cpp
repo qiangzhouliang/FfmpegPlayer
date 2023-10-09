@@ -224,3 +224,12 @@ Java_com_swan_ffmpegplayer_SwanPlayer_sound(JNIEnv *env, jobject thiz, jstring i
     env->ReleaseStringUTFChars(input_, input);
     env->ReleaseStringUTFChars(output_, output);
 }
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_swan_ffmpegplayer_VideoCompress_compressVideo(JNIEnv *env, jobject thiz,
+                                                       jobjectArray compress_command,
+                                                       jobject callback) {
+    // ffmpeg 处理视频的压缩，自己处理怎么处理，for循环每一帧，对每一帧进行处理（算法）
+
+
+}
