@@ -46,8 +46,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void open(View view) {
-        File file = new File(getApplication().getFilesDir().getPath()+"/file.mp4");
-        swanPlayer.start(file.getAbsolutePath());
+        File file = new File(getApplication().getFilesDir().getPath()+"/那些年，我们一起追的女孩.mp4");
+        swanPlayer.start(file.getPath());
     }
 
     public void openAudio(View view) {
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
         // test.mp4 需要压缩的视频路径
         // out.mp4  压缩后的路径
         // 压缩式耗时的 子线程 权限处理
-        File mInFile = new File(getApplication().getFilesDir().getPath()+"/file.mp4");
+        File mInFile = new File(getApplication().getFilesDir().getPath()+"/那些年，我们一起追的女孩.mp4");
         File mOutFile = new File(getApplication().getFilesDir().getPath()+"/out.mp4");
 
         String[] compressCommand = {"ffmpeg","-i", mInFile.getAbsolutePath(),"-b:v","1024k", mOutFile.getAbsolutePath()};
