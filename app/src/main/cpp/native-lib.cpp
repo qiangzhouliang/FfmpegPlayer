@@ -35,6 +35,8 @@ Java_com_swan_ffmpegplayer_SwanPlayer_native_1start(JNIEnv *env, jobject thiz, j
                                                     jobject surface) {
     ANativeWindow* nativeWindow = ANativeWindow_fromSurface(env, surface);
     const char *path = env->GetStringUTFChars(path_, 0);
+    // 初始化所有组件，只有调用了该函数，才能使用复用器和编解码器
+    av_register_all();
     // ffmpeg 视频绘制 音频绘制
     // 初始化网络模块
     avformat_network_init();
@@ -128,6 +130,8 @@ Java_com_swan_ffmpegplayer_SwanPlayer_sound(JNIEnv *env, jobject thiz, jstring i
                                             jstring output_) {
     const char *input = env->GetStringUTFChars(input_, 0);
     const char *output = env->GetStringUTFChars(output_, 0);
+    // 初始化所有组件，只有调用了该函数，才能使用复用器和编解码器
+    av_register_all();
     // 初始化网络模块
     avformat_network_init();
     // 总上下文
